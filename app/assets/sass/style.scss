@@ -1,0 +1,13 @@
+@import 'normalize';
+
+@mixin input() {
+    color: red;
+}
+
+.box{
+  border-radius: 20px;
+
+  display: flex;
+
+  @include input();
+}
