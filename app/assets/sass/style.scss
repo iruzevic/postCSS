@@ -1,11 +1,13 @@
-@import 'normalize';
+// @import 'normalize';
 
 @mixin input() {
-    color: red;
+    color: #000000;
 }
 
 .box{
-  border-radius: 20px;
+  font-family: 'Roboto Condensed';
+
+  background-image: url('../images/infinum-logo.png');
 
   display: flex;
 

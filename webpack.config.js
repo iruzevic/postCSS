@@ -2,57 +2,50 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const precss = require('precss');
 
 const appPath = path.resolve(__dirname);
 
-const outputJs = '[name]-[hash].js';
-const outputCss = '[name]-[hash].css';
+const outputJs = '[name].js';
+const outputCss = 'css/[name].css';
+const outputFile = '[name].[ext]';
 
 module.exports = {
-  entry: `${appPath}/app/assets/webpack.js`,
+  entry: {
+    application: [`${appPath}/app/assets/webpack.js`]
+  },
   output: {
     path: `${appPath}/app/public`,
     filename: outputJs
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        loader: `file-loader?name=images/${outputFile}`
+      },
+      {
+        test: /\.(eot|ttf|woff2?)$/,
+        loader: `file-loader?name=fonts/${outputFile}`
+      },
+      {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
         loader: [{
           loader: 'css-loader'
         }, {
-          loader: 'postcss-loader',
-          options: {
-            plugins: function() {
-              return [
-                require('precss'),
-                autoprefixer,
-              ];
-            },
-          },
+          loader: 'postcss-loader'
         }, {
           loader: 'sass-loader'
         }],
       }),
-    }]
+    }
+  ]
   },
 
-  plugins: [new ExtractTextPlugin('[name].css')]
+  plugins: [
+    new ExtractTextPlugin(outputCss)
+  ]
 
-
-  // {
-  //   loader: 'postcss-loader',
-  //   options: {
-  //     plugins: function() {
-  //       return [
-  //         require('precss'),
-  //         require('autoprefixer')
-  //       ];
-  //     },
-  //   },
-  // },
 }
