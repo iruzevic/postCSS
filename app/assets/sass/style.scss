@@ -1,15 +1,71 @@
-// @import 'normalize';
+@import '~media-blender';
 
-@mixin input() {
-    color: #000000;
+// ---------------------------------------
+
+.autoprefix {
+  display: flex;
 }
 
-.box{
+// ---------------------------------------
+
+.fontFamily,
+body {
   font-family: 'Roboto Condensed';
+}
 
-  background-image: url('../images/infinum-logo.png');
+// ---------------------------------------
 
-  display: flex;
+.mqPacker {
+  .box1 {
+    width: 800px;
 
-  @include input();
+    @include media(small) {
+      width: 500px;
+    }
+  }
+
+  .box2 {
+    width: 300px;
+
+    @include media(tablet) {
+      width: 100px;
+    }
+
+    @include media(small) {
+      width: 100px;
+    }
+  }
+
+  .box3 {
+    @include media(tablet) {
+      width: 50px;
+    }
+
+    @include media(small) {
+      width: 30px;
+    }
+  }
+}
+
+// ---------------------------------------
+:root {
+  --fontSize: 1rem;
+  --color: 180;
+  --borderColor: 0;
+  --bgColor: #F4F4F4;
+}
+
+.nextCss {
+  padding: calc((var(--fontSize) / 2) + 10px);
+  color: gray(var(--color));
+  border: 1px solid gray(var(--borderColor), 30%);
+  filter: sepia(0.8);
+  display: block;
+  width: 300px;
+  height: 100px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 100px;
+  background-color: var(--bgColor);
+  font-weight: bold;
 }

@@ -1,6 +1,6 @@
 
 {
-  "ignoreFiles": "app/styles/vendor/**/*.scss",
+  // "ignoreFiles": "app/styles/vendor/**/*.scss",
   "rules": {
     "color-hex-case": "upper",
     "color-hex-length": "long",

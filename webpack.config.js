@@ -10,6 +10,14 @@ const outputCss = 'css/[name].css';
 const outputFile = '[name].[ext]';
 
 module.exports = {
+  watch: true,
+  stats: {
+        // Configure the console output
+        errorDetails: true, //this does show errors
+        colors: true,
+        modules: true,
+        reasons: true
+    },
   entry: {
     application: [`${appPath}/app/assets/webpack.js`]
   },

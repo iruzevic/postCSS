@@ -1,12 +1,14 @@
 module.exports = {
   plugins: [
     require('precss'),
-    require('autoprefixer')({
-      browserslist: [
-        "> 5%",
-        "last 2 versions"
-      ]
-    }),
+
+    // require('autoprefixer')({
+    //   browserslist: [
+    //     "> 1%",
+    //     "last 5 versions"
+    //   ]
+    // }),
+
     require('postcss-font-magician')({
       protocol: 'https:',
       variants: {
@@ -18,11 +20,16 @@ module.exports = {
       },
       foundries: ['google']
     }),
-    // require('postcss-assets')({
-    //   loadPaths: ['images/'],
-    //   basePath: '../'
-    // }),
-    // require('stylelint'),
-    // require('cssnano')
+
+    require('css-mqpacker'),
+
+    require('postcss-cssnext')({
+      browserslist: [
+        "> 1%",
+        "last 5 versions"
+      ]
+    }),
+
+    require('cssnano')
   ]
 }
