@@ -4,20 +4,24 @@
   "author": "Ivan Ružević",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^6.6.1",
+    "autoprefixer": "^6.7.2",
     "css-loader": "^0.26.1",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.10.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.9.0",
-    "media-blender": "^2.0.0",
-    "node-sass": "^4.2.0",
+    "media-blender": "^2.1.0",
+    "node-sass": "^4.5.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-font-magician": "^1.6.0",
     "postcss-loader": "^1.2.2",
     "precss": "^1.4.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.0-rc.4"
-  }
+    "webpack": "^2.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 5 versions"
+  ]
 }

@@ -2,12 +2,7 @@ module.exports = {
   plugins: [
     require('precss'),
 
-    // require('autoprefixer')({
-    //   browserslist: [
-    //     "> 1%",
-    //     "last 5 versions"
-    //   ]
-    // }),
+    require('autoprefixer'),
 
     require('postcss-font-magician')({
       protocol: 'https:',
@@ -23,12 +18,7 @@ module.exports = {
 
     require('css-mqpacker'),
 
-    require('postcss-cssnext')({
-      browserslist: [
-        "> 1%",
-        "last 5 versions"
-      ]
-    }),
+    require('postcss-cssnext'),
 
     require('cssnano')
   ]

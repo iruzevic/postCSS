@@ -38,8 +38,8 @@ module.exports = {
       },
       {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         loader: [{
           loader: 'css-loader'
         }, {
